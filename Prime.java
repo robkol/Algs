@@ -1,0 +1,66 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package algs;
+
+/**
+ *
+ * @author rob
+ */
+public class Prime {
+
+
+
+    public boolean isPrime1(int n )
+    {
+        for(int i = 2;i<n;i++)
+        {
+            int rem = n % i;
+            if(n % i == 0)
+                return false;
+        }
+        return true;
+
+    }
+
+    public boolean isPrime2(int n)
+    {
+        if(n==1) return true;
+        if(n==2) return true;
+        if(n%2==0) return false;
+
+        int m = (int)Math.sqrt((int)n);
+
+        for(int i=3;i<=m;i+=2)
+            if(n%i==0)
+                return false;
+        return true;
+    }
+
+    public static void main(String args[])
+    {
+
+        Prime p = new Prime();
+        long start = System.currentTimeMillis();
+        int counter = 0;
+        for(int i = 1;i<100000;i++)
+        {
+            if(p.isPrime1(i))
+                counter++;
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(counter + " --- " + (end-start) );
+        start = System.currentTimeMillis();
+        counter=0;
+        for(int i = 1;i<100000;i++)
+        {
+            if(p.isPrime2(i))
+                counter++;
+        }
+        end = System.currentTimeMillis();
+        System.out.println(counter + " --- " + (end-start) );
+    }
+
+}

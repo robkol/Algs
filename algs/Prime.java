@@ -1,4 +1,9 @@
-package Algs;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package algs;
 
 /**
  *
@@ -7,10 +12,7 @@ package Algs;
 public class Prime {
 
 
-    /*
-     * This method finds prime numbers in a brute force fashion
-     *
-     */
+
     public boolean isPrime1(int n )
     {
         for(int i = 2;i<n;i++)
@@ -22,10 +24,6 @@ public class Prime {
         return true;
 
     }
-    /*
-     * This method uses an optimisation that I found while reading through top coder tutorials
-     *
-     */ 
 
     public boolean isPrime2(int n)
     {
@@ -53,7 +51,6 @@ public class Prime {
                 counter++;
         }
         long end = System.currentTimeMillis();
-        //outputs the performance of the brute force method
         System.out.println(counter + " --- " + (end-start) );
         start = System.currentTimeMillis();
         counter=0;
@@ -63,7 +60,6 @@ public class Prime {
                 counter++;
         }
         end = System.currentTimeMillis();
-        //outputs the performance of the improved method
         System.out.println(counter + " --- " + (end-start) );
     }
 

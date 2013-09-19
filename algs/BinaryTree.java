@@ -9,7 +9,7 @@ package algs;
  *
  * @author rob
  */
-public class BinarTree
+public class BinaryTree
 {
     public static  class Node
     {

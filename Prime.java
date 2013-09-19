@@ -7,6 +7,10 @@ package Algs;
 public class Prime {
 
 
+	public Prime(){
+		super();
+	}
+	
     /*
      * This method finds prime numbers in a brute force fashion
      *

@@ -11,12 +11,12 @@ import java.util.HashMap;
  *
  * @author rob
  */
-public class BaseConverstion2 {
+public class BaseConversion2 {
 
     HashMap<Character,Integer> mapping = new HashMap<Character, Integer>();
     char arr[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 
-    public BaseConverstion2() {
+    public BaseConversion2() {
         mapping.put('0', 0);
         mapping.put('1', 1);
         mapping.put('2', 2);
@@ -70,8 +70,8 @@ public class BaseConverstion2 {
 
     public static void main(String args[])
     {
-        BaseConverstion2 baseConversation = new BaseConverstion2();
-        System.out.println(baseConversation.betweenBases("1000011011000100", 2, 16));
+        BaseConversion2 baseConversion = new BaseConversion2();
+        System.out.println(baseConversion.betweenBases("1000011011000100", 2, 16));
     }
 
 }

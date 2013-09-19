@@ -15,7 +15,7 @@ public class BaseConversion{
     HashMap<Character, Integer> mapping = new HashMap<Character, Integer>();
     char arr[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 
-    public BaseConversation() {
+    public BaseConversion() {
         mapping.put('0', 0);
         mapping.put('1', 1);
         mapping.put('2', 2);

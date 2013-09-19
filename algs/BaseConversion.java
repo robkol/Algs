@@ -11,8 +11,7 @@ import java.util.HashMap;
  *
  * @author rob
  */
-public class BaseConversation
-{
+public class BaseConversion{
     HashMap<Character, Integer> mapping = new HashMap<Character, Integer>();
     char arr[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 
@@ -35,17 +34,14 @@ public class BaseConversation
         mapping.put('F', 15);
     }
 
-    public String betweenBases(String input,int b1,int b2)
-    {
+    public String betweenBases(String input,int b1,int b2){
         int dec = ToDecimal(input, b1);
         return toBase(dec, b2);
     }
 
-    public String toBase(int decVal,int b)
-    {
+    public String toBase(int decVal,int b){
         StringBuilder sb = new StringBuilder();
-        while(decVal>0)
-        {
+        while(decVal>0){
             sb.append(arr[decVal%b]);
             decVal = decVal/b;
         }
@@ -53,13 +49,11 @@ public class BaseConversation
         return sb.toString();
     }
 
-    public int ToDecimal(String val, int b)
-    {
+    public int ToDecimal(String val, int b){
         int multiplier = 1;
         int result = 0;
 
-        for(int i = val.length()-1;i>=0;i--)
-        {
+        for(int i = val.length()-1;i>=0;i--){
             result += mapping.get(val.charAt(i)) * multiplier;
             multiplier *=b;
         }
@@ -67,8 +61,7 @@ public class BaseConversation
     }
 
 
-    public int ToDecimal(int n,int b)
-    {
+    public int ToDecimal(int n,int b){
         int multiplier = 1;
         int result = 0;
 
@@ -81,13 +74,12 @@ public class BaseConversation
         return result;
     }
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]){
 //        System.out.println(123%10);
 //        System.out.println(new BaseConversation().ToDecimal(1101, 2));
-        BaseConversation baseConversation = new BaseConversation();
+        BaseConversion baseConversion = new BaseConversion();
 //        System.out.println(baseConversation.betweenBases("1000011011000100", 2, 16));
-        System.out.println(baseConversation.betweenBases("8", 10, 2));
+        System.out.println(baseConversion.betweenBases("8", 10, 2));
     }
 }
 

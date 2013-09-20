@@ -8,7 +8,7 @@ package algs;
 import java.util.Arrays;
 
 /**
- *
+ * Incomplete.
  * @author rob
  */
 public class QuickSort{

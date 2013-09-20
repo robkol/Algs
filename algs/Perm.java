@@ -12,25 +12,19 @@ import java.util.List;
  * Used to return all the permutations of a given string.
  * @author rob
  */
-public class perm
-{
+public class Perm{
 
-    public static List<String> perm(String in)
-    {
+    public static List<String> perm(String in){
         return perm(in,"",in.length());
     }
 
-    public static List<String> perm(String in, String out, int length)
-    {
+    public static List<String> perm(String in, String out, int length){
         List<String> list = new LinkedList<String>();
-        if(out.length() ==length)
-        {
+        if(out.length() ==length){
             list.add(out);
         }
-        else
-        {
-            for(int i = 0; i< in.length();i++)
-            {
+        else{
+            for(int i = 0; i< in.length();i++){
                 String rest;
                 if(i==0)
                     rest = in.substring(1);
@@ -43,8 +37,7 @@ public class perm
         return list;
     }
 
-    public static void main(String [] args)
-    {
+    public static void main(String [] args){
         System.out.println(perm("abc"));
     }
 }

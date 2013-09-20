@@ -20,11 +20,8 @@ public class PUnique
 {
     public static void main(String args[])
     {
-        //uncomment to run tests
-//        test_uniqueElements();
-
         //uncomment to run sample cases
-//        runSamples();
+        runSamples();
         
 
     }
@@ -113,55 +110,6 @@ public class PUnique
         int[] output = createRandomArray(uniqueElems,P);
         return output;
 
-    }
-
-    //outputs whether the two arrays are equal or not
-    public static void test_uniqueElements()
-    {
-
-        int [] input = {1,2,3};
-        int [] correct = {1,2,3};
-        int [] output = uniqueElements(input);
-        System.out.println(Arrays.equals(output,correct) +
-                " {1,2,3} = {1,2,3}");
-
-        int [] input2 = {1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3};
-        int [] correct2 = {1,2,3};
-        int [] output2 = uniqueElements(input2);
-        System.out.println(Arrays.equals(output2,correct2) +
-                " {1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3} = " +
-                "{1,2,3}");
-
-        int [] input3 = {3,3,3,3,3,3,2,2,2,2,2,1,1,1,1,1,1,1};
-        int [] correct3 = {1,2,3};
-        int [] output3 = uniqueElements(input3);
-        System.out.println(Arrays.equals(output3,correct3) +
-                " {3,3,3,3,3,3,2,2,2,2,2,1,1,1,1,1,1,1} = " +
-                "{1,2,3}");
-
-        int [] input4 = {};
-        int [] correct4 = {};
-        int [] output4 = uniqueElements(input4);
-        System.out.println(Arrays.equals(output4,correct4) +
-                " {} = {}");
-
-        int [] input5 = {1};
-        int [] correct5 = {1};
-        int [] output5 = uniqueElements(input5);
-        System.out.println(Arrays.equals(output5,correct5) +
-                " {1} = {1}");
-
-        int [] input6 = {1,2,3};
-        int [] correct6 = {1,3};
-        int [] output6 = uniqueElements(input6);
-        System.out.println(! Arrays.equals(output6,correct6) +
-                " {1,2,3} != {1,3}");
-
-        int [] input7 = {1,2,3};
-        int [] correct7 = {};
-        int [] output7 = uniqueElements(input7);
-        System.out.println(! Arrays.equals(output7,correct7) +
-                " {1,2,3} != {}");
     }
 
 

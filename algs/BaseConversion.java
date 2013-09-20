@@ -75,10 +75,7 @@ public class BaseConversion{
     }
 
     public static void main(String args[]){
-//        System.out.println(123%10);
-//        System.out.println(new BaseConversation().ToDecimal(1101, 2));
         BaseConversion baseConversion = new BaseConversion();
-//        System.out.println(baseConversation.betweenBases("1000011011000100", 2, 16));
         System.out.println(baseConversion.betweenBases("8", 10, 2));
     }
 }

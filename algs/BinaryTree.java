@@ -9,27 +9,24 @@ package algs;
  *
  * @author rob
  */
-public class BinaryTree
-{
-    public static  class Node
-    {
+public class BinaryTree{
+
+	public static  class Node{
+		
         public Node left;
         public Node right;
         public int value;
 
-        public Node(int value)
-        {
+        public Node(int value){
             this.value = value;
             left = right = null;
         }
     }
-    public static class Offset
-    {
+    public static class Offset{
         int offest;
     }
 
-    public static void inorder(Node root)
-    {
+    public static void inorder(Node root){
         if(root == null)
             return;
 
@@ -38,38 +35,38 @@ public class BinaryTree
         inorder(root.right);
     }
 
-    public static void addNode(Node root, Node newNode)
-    {
-        if(newNode.value < root.value)
-        {
+    public static void addNode(Node root, Node newNode){
+        if(newNode.value < root.value){
             if(root.left != null)
                 addNode(root.left, newNode);
             else
                 root.left = newNode;
         }
-        else
-        {
+        else{
             if(root.right != null)
                 addNode(root.right, newNode);
             else
                 root.right = newNode;
         }
     }
+    
+    public static void kBiggest(Node root, int K){
+    	Offset offset = new Offset();
+        offset.offest = 0;
+        kBiggest(root, K, offset);
+    }
 
-    public static void kBiggest(Node root, int K, Offset current)
-    {
+    private static void kBiggest(Node root, int K, Offset current){
         if(root == null)
             return;
 
         kBiggest(root.right, K, current);
-        if(K == current.offest)
-        {
+        if(K == current.offest){
             System.out.println(root.value);
             current.offest++;
             return;
         }
-        else
-        {
+        else{
             current.offest++;
         }
         if(current.offest<=K)
@@ -77,8 +74,7 @@ public class BinaryTree
 
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args){
         Node root = new Node(5);
         addNode(root, new Node(3));
         addNode(root, new Node(7));
@@ -90,19 +86,13 @@ public class BinaryTree
         inorder(root);
 
         System.out.println("---");
-        Offset offset = new Offset();
-        offset.offest = 0;
-        kBiggest(root, 5, offset);
-        offset.offest = 0;
-        kBiggest(root, 4, offset);
-        offset.offest = 0;
-        kBiggest(root, 3, offset);
-        offset.offest = 0;
-        kBiggest(root, 2, offset);
-        offset.offest = 0;
-        kBiggest(root, 1, offset);
-        offset.offest = 0;
-        kBiggest(root, 0, offset);
+        
+        kBiggest(root, 5);
+        kBiggest(root, 4);
+        kBiggest(root, 3);
+        kBiggest(root, 2);
+        kBiggest(root, 1);
+        kBiggest(root, 0);
 
     }
 

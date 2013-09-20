@@ -11,14 +11,11 @@ import java.util.Arrays;
  *
  * @author rob
  */
-public class QuickSort
-{
-    public static void sort(int [] arr)
-    {
+public class QuickSort{
+    public static void sort(int [] arr){
         sort(arr,0,arr.length-1);
     }
-    private static void sort(int [] arr,int lo,int hi)
-    {
+    private static void sort(int [] arr,int lo,int hi){
         if((hi-lo)<2)
             return;
 
@@ -27,32 +24,27 @@ public class QuickSort
         sort(arr,midpoint+1,hi);
 
     }
-    private static int partition(int [] arr, int lo, int hi)
-    {
+    private static int partition(int [] arr, int lo, int hi){
         int pivot = arr[lo];
         int high = hi;
         int low = lo+1;
 
-        while(low<high)
-        {
-            while(low <= high)
-            {
+        while(low<high){
+            while(low <= high){
                 if(arr[low] < pivot)
                     low++;
                 else
                     break;
             }
 
-            while(high > low)
-            {
+            while(high > low){
                 if(arr[high] > pivot)
                     high--;
                 else
                     break;
             }
 
-            if(low<high)
-            {
+            if(low<high){
                 System.out.println(String.format("Swap %s with %s", arr[low],arr[high]));
                 //swap
                 int temp = arr[low];
@@ -61,8 +53,7 @@ public class QuickSort
                 low++;
                 high--;
             }
-            else
-            {
+            else{
                 break;
             }
         }
@@ -70,13 +61,11 @@ public class QuickSort
         arr[low-1] = pivot;
         return low-1;
 
-
     }
 
 
-    public static void main(String[] args)
-    {
-        int[] x = {2,3,1};
+    public static void main(String[] args){
+        int[] x = {2,3,1,8,4,6};
         sort(x);
         System.out.println(Arrays.toString(x));
     }

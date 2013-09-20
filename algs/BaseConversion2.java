@@ -8,7 +8,7 @@ package algs;
 import java.util.HashMap;
 
 /**
- *
+ * 
  * @author rob
  */
 public class BaseConversion2 {

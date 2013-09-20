@@ -61,8 +61,9 @@ public class FloydWarshall
     public static void main(String args[])
     {
         FloydWarshall floydWarshall = new FloydWarshall();
+        System.out.println("Input graph");
         floydWarshall.Print();
-        System.out.println();
+        System.out.println("\nAfter FloydWarshall alg");
         floydWarshall.ShortestPath();
         floydWarshall.Print();
 

@@ -8,65 +8,49 @@ package algs;
 import java.util.Arrays;
 
 /**
- * Incomplete.
+ * 
  * @author rob
  */
 public class QuickSort{
-    public static void sort(int [] arr){
-        sort(arr,0,arr.length-1);
-    }
-    private static void sort(int [] arr,int lo,int hi){
-        if((hi-lo)<2)
-            return;
-
-        int midpoint = partition(arr, lo, hi);
-        sort(arr,lo,midpoint-1);
-        sort(arr,midpoint+1,hi);
-
-    }
-    private static int partition(int [] arr, int lo, int hi){
-        int pivot = arr[lo];
-        int high = hi;
-        int low = lo+1;
-
-        while(low<high){
-            while(low <= high){
-                if(arr[low] < pivot)
-                    low++;
-                else
-                    break;
-            }
-
-            while(high > low){
-                if(arr[high] > pivot)
-                    high--;
-                else
-                    break;
-            }
-
-            if(low<high){
-                System.out.println(String.format("Swap %s with %s", arr[low],arr[high]));
-                //swap
-                int temp = arr[low];
-                arr[low] = arr[high];
-                arr[high] = temp;
-                low++;
-                high--;
-            }
-            else{
-                break;
-            }
-        }
-        arr[lo] = arr[low-1];
-        arr[low-1] = pivot;
-        return low-1;
-
-    }
-
+    
 
     public static void main(String[] args){
         int[] x = {2,3,1,8,4,6};
-        sort(x);
+        int [] y = {1,2,3,4,5,6};
+        new QuickSort().sort(x);
         System.out.println(Arrays.toString(x));
+        
     }
+    
+
+	public void sort(int[] arr){
+		quicksort(arr, 0, arr.length-1);
+	}
+	
+	private void quicksort(int[] arr,int low, int high){
+		int lo = low,hi=high;
+		int pivotValue = arr[low+(high-low)/2];
+		while(lo<=hi){
+			while(arr[lo] < pivotValue)
+				lo++;
+			while(arr[hi] > pivotValue)
+				hi--;
+			
+			if(lo<=hi){
+				swap(arr,lo,hi);
+				lo++;hi--;
+			}
+		}
+		if(low<hi)
+			quicksort(arr, low, hi);
+		if(lo<high)
+			quicksort(arr, lo, high);
+	}
+	
+	private void swap(int arr[],int i,int j){
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;		
+	}
+
 }
